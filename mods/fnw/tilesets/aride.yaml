@@ -1,0 +1,157 @@
+General:
+	Name: Aride
+	TileSize: 44
+	Id: ARIDE
+	Palette: aride.pal
+	EditorTemplateOrder: Terrain, Debris, Road, Cliffs, Water Cliffs, Beach, River, Bridge
+	Extensions: .ari,.shp
+
+Terrain:
+	TerrainType@Clear:
+		Type: Clear
+		TargetTypes: Ground
+		AcceptsSmudgeType: Scorch
+		Color: 000000
+	TerrainType@Water:
+		Type: Water
+		TargetTypes: Water
+		IsWater: True
+		Color: 000000
+	TerrainType@Road:
+		Type: Road
+		TargetTypes: Ground
+		AcceptsSmudgeType: Scorch
+		Color: 000000
+	TerrainType@Bridge:
+		Type: Bridge
+		TargetTypes: Ground
+		AcceptsSmudgeType: Scorch
+		Color: 000000
+	TerrainType@Rock:
+		Type: Rock
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Tree:
+		Type: Tree
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@River:
+		Type: River
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Rough:
+		Type: Rough
+		TargetTypes: Ground
+		AcceptsSmudgeType: Scorch
+		Color: 000000
+	TerrainType@Wall:
+		Type: Wall
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Beach:
+		Type: Beach
+		TargetTypes: Ground
+		AcceptsSmudgeType: Scorch
+		Color: 000000
+	TerrainType@Void:
+		Type: Void
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Pilrock:
+		Type: Pilrock
+		TargetTypes: Ground
+		AcceptsSmudgeType: Scorch
+		Color: 000000
+	TerrainType@Diast:
+		Type: Diast
+		TargetTypes: Ground
+		AcceptsSmudgeType: Scorch
+		Color: 000000
+
+Templates:
+	Template@0:
+		Id: 0
+		Images: t00.ari
+		Size: 1,1
+		PickAny: False
+		Tiles:
+			0: Clear
+	Template@1:
+		Id: 1
+		Images: t01.ari
+		Size: 1,1
+		PickAny: False
+		Tiles:
+			0: Clear
+	Template@2:
+		Id: 2
+		Images: t02.ari
+		Size: 1,1
+		PickAny: False
+		Tiles:
+			0: Clear
+	Template@3:
+		Id: 3
+		Images: t03.ari
+		Size: 1,1
+		PickAny: False
+		Tiles:
+			0: Clear
+	Template@4:
+		Id: 4
+		Images: t04.ari
+		Size: 6,7
+		PickAny: False
+		Tiles:
+			1: Clear
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Clear
+			11: Clear
+			17: Rock
+			23: Rock
+			29: Rock
+			35: Clear
+			41: Clear
+			40: Rock
+			39: Rock
+			38: Clear
+			37: Clear
+			36: Clear
+			30: Rock
+			24: Rock
+			18: Clear
+			12: Clear
+			13: Clear
+			7: Clear
+			8: Rock
+			9: Rock
+			10: Rock
+			16: Rock
+			22: Rock
+			28: Rock
+			34: Rock
+			33: Rock
+			32: Rock
+			31: Rock
+			25: Rock
+			26: Clear
+			27: Rock
+			21: Rock
+			20: Rock
+			19: Rock
+			14: Rock
+			15: Rock
+	Template@5:
+		Id: 5
+		Images: t05.ari
+		Size: 3,2
+		PickAny: False
+		Tiles:
+			3: Rock
+			4: Rock
+			5: Rock
+			2: Rock
+			1: Rock
+			0: Rock

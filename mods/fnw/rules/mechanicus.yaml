@@ -1,0 +1,486 @@
+^ConditioneffetGeneralsUnit:
+    # Cloak Environement
+	GrantConditionOnTerrain@TREE:
+		Condition: TreeCloak
+		TerrainTypes: Tree
+	DetectCloaked@TREECONTACT:
+		Range: 2c0
+        RequiresCondition: TreeCloak
+	Cloak@Tree:
+		InitialDelay: 80
+		CloakDelay: 100
+		CloakSound:
+		UncloakSound:
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		IsPlayerPalette: true
+		RequiresCondition: TreeCloak
+	ExternalCondition@UNITE.GENERATOR:
+		Condition: cloakgenerator
+	Cloak@UnitGenerator:
+		InitialDelay: 40
+		CloakDelay: 30
+		CloakSound:
+		UncloakSound:
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		IsPlayerPalette: true
+		RequiresCondition: cloakgenerator
+	ExternalCondition@AVPOSTRANGE:
+		Condition: Avpost.Range
+    RangeMultiplier@AVPOSTRANGE:
+        Modifier: 130
+        RequiresCondition: Avpost.Range
+
+        
+        
+        
+^Select.Power.Limit:
+    Interactable:
+    ProvidesPrerequisite@two.select.Power:
+		Prerequisite: Select.Power2
+		RequiresPrerequisites: Select.Power, Select.Power
+    ProvidesPrerequisite@Power.Selection:
+		Prerequisite: Select.Power3
+		RequiresPrerequisites: Select.Power2, Select.Power2, Select.Power2, Select.Power2
+        
+# //////// General Attrib Effect Unite Types /////////
+
+^ConditionGeneralInfantryBase:
+    Inherits@PowerEffect: ^Power.AffectAll
+    Inherits@Healing: ^CoditionHeal
+    Inherits@Healingx2: ^CoditionHealX2
+    Inherits@fafnir.Capacity: ^fafnir.Capacity.garrisoned.baneslayer
+    Inherits@Cover:^CoditionCover
+    Inherits@1: ^HammerEradicatorStunInfantry
+    Inherits@StunSpeed:^StunSpeedDisturb
+    Inherits@NukeWarhead.Effect: ^HEDamageDelay
+    Inherits@DisturbPower:^PowerDistrub.Conclave
+    Inherits@Avatar.conclave: ^Aura.Avatar.Conclave
+
+^ConditionGeneralVehicleBase:
+    Inherits@PowerEffect: ^Power.AffectAll
+    Inherits@Repair:^CoditionRepairVehicle
+    Inherits@EMPDisable: ^EmpDisable
+    Inherits@EMPSpeedDisable: ^EmpSpeedDisable
+    Inherits@StunSpeed: ^StunSpeedDisturb
+    Inherits@Doomtower: ^CoditionDoomtower
+	Inherits@1: ^CoditionDamageMove
+    Inherits@NukeWarhead.Effect: ^HEDamageDelay
+	Inherits@2: ^StunEmp
+    Inherits@3: ^DisturbsReloadAmmo
+    Inherits@4: ^HammerEradicatorStunVehicle
+    Inherits@DisturbPower:^PowerDistrub.Conclave
+    Inherits@Avatar.conclave: ^Aura.Avatar.Conclave
+    
+^ConditionGeneralAircraftBase:
+    Inherits@PowerEffect: ^Power.AffectAll
+	Inherits@1: ^CoditionFlakAreaCruiser
+    Inherits@2: ^CoditionRepairAircraft
+    
+# ////////////////////////////////////////////////////////////////////
+# ///////////////////// Power Capacity Condition /////////////////////
+# ////////////////////////////////////////////////////////////////////
+
+^Power.AffectAll:
+	Inherits@1: ^PowerSmokeCamo.Baneslayer
+    Inherits@1: ^PowerDistrub.Conclave
+    Inherits@Zenith.Speed.conclave: ^Zenith.Alpha.Speed.Conclave
+
+^PowerSmokeCamo.Baneslayer:
+	ExternalCondition@POWERSMOKECAMO:
+		Condition: SmokeCamoActivate
+	TimedConditionBar@SMOKECAMO:
+		Condition: SmokeCamoActivate
+		Color: BBBBBB
+	Cloak@CamoPower:
+		InitialDelay: 0
+		CloakDelay: 0
+		CloakSound:
+		UncloakSound:
+		UncloakOn: Attack, Infiltrate, Demolish
+		IsPlayerPalette: true
+		RequiresCondition: SmokeCamoActivate
+        
+^fafnir.Capacity.garrisoned.baneslayer:
+	ExternalCondition@fafnir.garrisoned:
+		Condition: fafnir.garrisoned
+    RangeMultiplier@fafnir.garrisoned:
+        Modifier: 135
+        RequiresCondition: fafnir.garrisoned
+    ReloadDelayMultiplier@fafnir.garrisoned:
+        Modifier: 135
+        RequiresCondition: fafnir.garrisoned
+        
+# Stun Enttrave Unite
+^Zenith.Alpha.Speed.Conclave:
+	ExternalCondition@Speed.Zenith:
+		Condition: Speed.Zenith
+	WithIdleOverlay@Zenith.Alpha.Speed.Conclave:
+		Offset: 0, 0, 20
+		Sequence: aura_inffluence
+		Palette: powereffect60
+		RequiresCondition: Speed.Zenith
+    SpeedMultiplier@Speed.Zenith.Conclave:
+        Modifier: 130
+        RequiresCondition: Speed.Zenith
+        
+^PowerDistrub.Conclave:
+	ExternalCondition@Disturb:
+		Condition: disturbing
+    InaccuracyMultiplier@Disturb.Conclave:
+        Modifier: 1
+        RequiresCondition: disturbing
+    SpeedMultiplier@Disturb.Conclave:
+        Modifier: 30
+        RequiresCondition: disturbing
+    FirepowerMultiplier@Disturb.Conclave:
+        Modifier: 30
+        RequiresCondition: disturbing
+	TimedConditionBar@Disturb:
+		Condition: disturbing
+		Color: BBBBBB
+        
+^Aura.Avatar.Conclave:
+	ExternalCondition@Avatar.up:
+		Condition: avatar.up
+    FirepowerMultiplier@avatar.up.Conclave:
+        Modifier: 120
+        RequiresCondition: avatar.up
+    ReloadDelayMultiplier@avatar.up.Conclave:
+        Modifier: 75
+        RequiresCondition: avatar.up
+	WithIdleOverlay@Aura.Avatar:
+		Offset: 0, 0, 220
+		Sequence: aura.avatar.conclave
+		Palette: powereffect60
+		RequiresCondition: avatar.up
+    
+# ////////////////////////////////////////////////////////////////////
+# ///////////////////// Regular stat Condition ///////////////////////
+# ////////////////////////////////////////////////////////////////////
+
+^CoditionDamageMove:
+	SpeedMultiplier@DAMHEAVYSPEED:
+		RequiresCondition: damheavyspeed
+		Modifier: 70
+	ExternalCondition@DAMHEAVYSPEED:
+		Condition: damheavyspeed
+	GrantConditionOnDamageState@DAMHEAVYSPEED:
+		Condition: damheavyspeed
+		ValidDamageStates: Heavy
+	SpeedMultiplier@DAMCRITSPEED:
+		RequiresCondition: damcritspeed
+		Modifier: 60
+	ExternalCondition@DAMCRITSPEED:
+		Condition: damcritspeed
+	GrantConditionOnDamageState@DAMCRITSPEED:
+		Condition: damcritspeed
+		ValidDamageStates: Critical
+        
+# ////////////////////////////////////////////////////////////////////
+# /////////////////// Repair/Heal stat Condition /////////////////////
+# ////////////////////////////////////////////////////////////////////
+        
+^CoditionRepairAircraft:
+	ExternalCondition@REPAIRAIRCRAFT:
+		Condition: RepairAircraft
+	SelfHealing@REPAIR:
+		Step: 15
+		Delay: 40
+		HealIfBelow: 150
+		DamageCooldown: 125
+		RequiresCondition: RepairAircraft
+	WithIdleOverlay@REPAIR:
+		Offset: 0,0,0
+		Sequence: AircraftRepair
+		Palette: effectalpha55
+		RequiresCondition: RepairAircraft
+        
+        
+^CoditionRepairVehicle:
+	ExternalCondition@REPAIR:
+		Condition: RepairVehicle
+	SelfHealing@REPAIR:
+		Step: 100
+		Delay: 40
+		HealIfBelow: 150
+		DamageCooldown: 125
+		RequiresCondition: RepairVehicle
+	WithIdleOverlay@REPAIR:
+		Offset: 0,0,0
+		Sequence: VehicleRepair
+		Palette: effectalpha55
+		RequiresCondition: RepairVehicle
+        
+	ExternalCondition@REPAIRX2:
+		Condition: RepairVehicleX2
+	SelfHealing@REPAIRX2:
+		Step: 200
+		Delay: 55
+		HealIfBelow: 150
+		DamageCooldown: 125
+		RequiresCondition: RepairVehicleX2
+	WithIdleOverlay@REPAIRX2:
+		Offset: 0,0,0
+		Sequence: VehicleRepair
+		Palette: effectalpha55
+		RequiresCondition: RepairVehicleX2
+	EditorTilesetFilter:
+		Categories: Vehicle
+        
+^CoditionHeal:
+	ExternalCondition@HEAL:
+		Condition: HealInfantry
+	SelfHealing@HEAL:
+		Step: 50
+		Delay: 50
+		HealIfBelow: 150
+		DamageCooldown: 125
+		RequiresCondition: HealInfantry
+	WithIdleOverlay@HEAL2:
+		Offset: 0, 0, 220
+		Sequence: AuraHeal
+		Palette: effect
+		RequiresCondition: HealInfantry
+        
+^CoditionHealX2:
+	ExternalCondition@HEALX2:
+		Condition: HealInfantryX2
+	SelfHealing@HEALX2:
+		Step: 50
+		Delay: 25
+		HealIfBelow: 150
+		DamageCooldown: 125
+		RequiresCondition: HealInfantryX2
+	WithIdleOverlay@HEAL2X2:
+		Offset: 0, 0, 220
+		Sequence: AuraHeal
+		Palette: effectalpha55
+		RequiresCondition: HealInfantryX2
+        
+# ////////////////////////////////////////////////////////////////////
+# ///////////////////// Weapons stat Condition ///////////////////////
+# ////////////////////////////////////////////////////////////////////
+        
+        
+^HammerEradicatorStunVehicle:
+	ExternalCondition@HammerEradicatorStunVehicle:
+		Condition: HammerEradicatorStun
+    TimedConditionBar@HammerEradicatorStunVehicle:
+		Condition: HammerEradicatorStun
+		Color: FFFFFF
+	WithIdleOverlay@HammerEradicatorStunVehicle:
+		Offset: 0,0,0
+		Sequence: VehicleStun
+		Palette: effect
+		RequiresCondition: HammerEradicatorStun
+	SpeedMultiplier@HammerEradicatorStunVehicle:
+		RequiresCondition: HammerEradicatorStun
+		Modifier: 70
+       
+        
+^HEDamageDelay:
+	ExternalCondition@HEDamageDelay:
+		Condition: HEDamageDelay
+    TimedConditionBar@HEDamageDelay:
+		Condition: HEDamageDelay
+		Color: fe5a00
+    DamagedByTerrain@HEDamageDelay:
+        Damage: 25
+        DamageInterval: 8
+        RequiresCondition: HEDamageDelay
+        DamageTypes: Burned
+        Terrain: Clear, Rough, Tree, Diast
+        
+^HammerEradicatorStunInfantry:
+	ExternalCondition@HammerEradicatorStunInfantry:
+		Condition: HammerEradicatorStun
+    TimedConditionBar@HammerEradicatorStunInfantry:
+		Condition: HammerEradicatorStun
+		Color: FFFFFF
+	WithDecoration@HammerEradicatorStunInfantry:
+		Image: stat-effect
+		Sequence: stun-overlay
+		Palette: effect
+		ReferencePoint: Bottom, Right
+		RequiresCondition: stunspeed
+		ZOffset: 256
+	SpeedMultiplier@HammerEradicatorStunInfantry:
+		RequiresCondition: HammerEradicatorStun
+		Modifier: 70
+        
+# ////////////////////////////////////////////////////////////////////
+# /////////////////////// Stun stat Condition ////////////////////////
+# ////////////////////////////////////////////////////////////////////
+
+
+# IEM Complete Blocked Unite
+^EmpSpeedDisable:
+	ExternalCondition@EMPSPEEDDISABLE:
+		Condition: empspeeddisable
+	WithColoredOverlay@EMPSPEEDDISABLE:
+		RequiresCondition: empspeeddisable
+		Palette: disabled
+	WithIdleOverlay@EMPSPEEDDISABLE:
+		Sequence: VehicleIEM
+		Palette: effect
+		RequiresCondition: empspeeddisable
+		ShowToEnemies: true
+		ZOffset: 512
+	TimedConditionBar@EMPSPEEDDDISABLE:
+		Condition: empspeeddisable
+		Color: FFFFFF
+
+^EmpDisable:
+	ExternalCondition@EMPDISABLE:
+		Condition: empdisable
+	WithColoredOverlay@EMPDISABLE:
+		RequiresCondition: empdisable
+		Palette: disabled
+	WithIdleOverlay@EMPDISABLE:
+		Sequence: VehicleIEM
+		Palette: effect
+		RequiresCondition: empdisable
+		ShowToEnemies: true
+		ZOffset: 512
+        
+        
+# Stun Enttrave Unite
+^StunSpeedDisturb:
+	ExternalCondition@Disturb:
+		Condition: disturbingspeed
+    InaccuracyMultiplier@Disturb.Conclave:
+        Modifier: 1
+        RequiresCondition: disturbingspeed
+    SpeedMultiplier@Disturb.Conclave:
+        Modifier: 30
+        RequiresCondition: disturbingspeed
+    FirepowerMultiplier@Disturb.Conclave:
+        Modifier: 30
+        RequiresCondition: disturbingspeed
+
+    #Obsolete []
+^DisturbsReloadAmmo:
+	ExternalCondition@DisturbsZap:
+		Condition: DisturbsZap
+    TimedConditionBar@DisturbsZap:
+		Condition: DisturbsZap
+		Color: FFFFFF
+	WithIdleOverlay@DisturbsStun:
+		Offset: 0,0,0
+		Sequence: VehicleStun
+		Palette: effect
+		RequiresCondition: DisturbsZap
+    ReloadDelayMultiplier@DisturbsZap:
+        Modifier: 180
+        RequiresCondition: DisturbsZap
+
+# Stun Enttrave Unite
+^StunEmp:
+	WithColoredOverlay@STUN:
+		RequiresCondition: stunspeed
+		Palette: palStun
+	TimedConditionBar@STUN:
+		Condition: stunspeed
+		Color: FFFFFF
+	SpeedMultiplier@STUN:
+		RequiresCondition: stunspeed
+		Modifier: 20
+	ExternalCondition@STUN:
+		Condition: stunspeed
+	WithDecoration@STUN:
+		Image: stat-effect
+		Sequence: stun-overlay
+		Palette: effect
+		ReferencePoint: top, left
+		RequiresCondition: stunspeed
+		ZOffset: 800
+	TimedConditionBar@QLOW:
+		Condition: stunspeed
+		Color: FFFFFF
+	SpeedMultiplier@QLOW:
+		RequiresCondition: stunspeed
+		Modifier: 20
+	WithDecoration@QLOW:
+		Image: stat-effect
+		Sequence: QuakeLow
+		Palette: effect
+		ReferencePoint: top, Right
+		RequiresCondition: stunspeed
+		ZOffset: 120
+        
+        
+        
+        
+^CoditionCover:
+	GrantConditionOnTerrain@CoverZone:
+		Condition: CoverZone
+		TerrainTypes: Rough
+	DamageMultiplier@Cover:
+		Modifier: 75
+		RequiresCondition: CoverZone
+	WithIdleOverlay@Cover:
+		Offset: 0, 0, 220
+		Sequence: auracover
+		Palette: effect
+		RequiresCondition: CoverZone
+        
+^CoditionDoomtower:
+	ExternalCondition@Doom.impact:
+		Condition: DoomImpact
+    DamagedByTerrain@Doom.impact:
+        Damage: 100
+        DamageInterval: 12
+        Terrain: Clear, Rough, Tree, Diast, Road
+        RequiresCondition: DoomImpact
+	WithIdleOverlay@Doom.impact:
+		Offset: 0, 0, 220
+		Sequence: VehicleElectro
+		Palette: effect
+		RequiresCondition: DoomImpact
+            
+        
+^CoditionFlakAreaCruiser:
+	ExternalCondition@FlakCruiser:
+		Condition: FlakCruiser
+    DamagedByTerrain@FlakCruiser:
+        Damage: 80
+        DamageInterval: 8
+        Terrain: Clear, Rough, Tree, Diast, Road
+        RequiresCondition: FlakCruiser
+	WithIdleOverlay@FlakCruiser:
+		Offset: 0, 0, 220
+		Sequence: Flak.Area
+		Palette: effect
+		RequiresCondition: FlakCruiser
+	AmbientSound:
+		RequiresCondition: FlakCruiser
+		SoundFiles: flakgunzone.aud
+		Delay: 2
+		Interval: 10
+
+^ModuleSelect1:
+	WithColoredOverlay@STUN:
+		RequiresCondition: stunspeed
+		Palette: palStun
+	TimedConditionBar@STUN:
+		Condition: stunspeed
+		Color: FFFFFF
+	SpeedMultiplier@STUN:
+		RequiresCondition: stunspeed
+		Modifier: 20
+	WithDecoration@STUN:
+		Image: stat-effect
+		Sequence: stun-overlay
+		Palette: effect
+		ReferencePoint: Bottom, Right
+		RequiresCondition: stunspeed
+		ZOffset: 256
+	Cloak@EXTERNALCLOAK:
+		RequiresCondition: cloakgenerator
+		InitialDelay: 0
+		CloakDelay: 90
+		IsPlayerPalette: true
+		CloakSound:
+		UncloakSound:
+	ExternalCondition@CLOAKGENERATOR:
+		Condition: cloakgenerator

@@ -1,0 +1,132 @@
+t1_heidrun:
+    Inherits@Stat:^StatVehicleEffect
+    muzzle: muzzle_autogun_small
+        Length: *
+        BlendMode: Additive
+	idle:
+	icon: artemisicon
+
+t2_dwarf:
+    Inherits@Stat:^StatVehicleEffect
+    muzzle: muzzle_autogun_medium
+        Length: *
+        BlendMode: Additive
+	idle:
+	lightgun: minbaselightcub
+		Length: 4
+		BlendMode: Additive
+	icon: achilleicon
+    
+t2_dwarf.husk:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+
+t2_achilledoom:
+    Inherits@Stat:^StatVehicleEffect
+    muzzle: muzzle_autogun_large
+        Length: *
+        BlendMode: Additive
+	idle:
+	icon: achilledoomicon
+    
+t2_achilledoom.husk:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+
+t1_ratatoskr:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+        Facings: 64
+    muzzle: muzzle_autogun_small
+        Length: *
+        BlendMode: Additive
+	icon: prometheeicon
+
+t2_garm:
+    Inherits@Stat:^StatVehicleEffect
+    muzzle: muzzle_bluegun
+        Length: *
+        BlendMode: Additive
+	idle:
+		Facings: 64
+	turret: t2_garmtur
+		Facings: 64
+	icon: minauticon
+
+t2_warg:
+    Inherits@Stat:^StatVehicleEffect
+    muzzle: muzzle_autogun_small
+        Length: *
+        BlendMode: Additive
+	idle:
+	icon: wargicon
+    
+t2_warg.husk:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+
+t2_yggdrasil:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+	icon: Yggdrasilicon
+    
+t2_lindwyrm:
+    Inherits@Stat:^StatVehicleEffect
+    muzzle: muzzle_balist_large
+        Length: *
+        BlendMode: Additive
+	idle:
+	icon: lindwyrnicon
+    
+t2_lindwyrm.husk:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+    
+t3_doomtower_mobile:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+
+t3_fafnir:
+    Inherits@Stat:^StatVehicleEffect
+    muzzle: muzzle_autogun_small
+        Length: *
+        BlendMode: Additive
+	idle:
+		Facings: 64
+	icon: fafniricon
+
+t3_loki:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+	icon: lokiicon
+    
+t3_heimdall:
+    Inherits@Stat:^StatVehicleEffect
+    muzzle: muzzle_balist_large
+        Length: *
+        BlendMode: Additive
+	idle:
+	icon: heimicon
+    
+t4_odin:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+	icon: odinicon
+
+t1_dainn:
+    Inherits@Stat:^StatVehicleEffect
+	idle: null
+	harvest: harvest_anim
+        Length: *
+        BlendMode: Additive
+	dock: null
+	dock-loop: null
+	icon: opharvicon
+
+mechh:
+	idle:
+	icon: artnkicon
+
+railguntnk:
+	idle:
+	icon: artnkicon

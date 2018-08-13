@@ -1,0 +1,43 @@
+tcmcv:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+	icon: tcmcvicon
+
+prospecteur:
+    Inherits@Stat:^StatVehicleEffect
+	idle: null
+	harvest: harvest_anim
+        Length: *
+        BlendMode: Additive
+	dock: null
+	dock-loop: null
+	icon: prospecticon
+
+arpenteur:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+    aura_phie: aura_phie
+		Length: *
+		BlendMode: Additive
+    aura_omega: aura_omega
+		Length: *
+		BlendMode: Additive
+	icon: arpenteuricon
+
+t2_rodeur:
+    Inherits@Stat:^StatVehicleEffect
+	idle:
+    muzzle: muzzle_bluegun
+        Length: *
+        BlendMode: Additive
+	icon: rebornicon
+
+dcatnk:
+    Inherits@Stat:^StatVehicleEffect
+    muzzle: muzzle_balist_medium
+        Length: *
+        BlendMode: Additive
+	deploy: mine_stun
+        BlendMode: Additive
+	idle:
+	icon: dcatnkicon

@@ -1,0 +1,200 @@
+ShadowIndex: 1
+
+Palettes:
+	cursor: temperat.pal
+
+Cursors:
+	mouse.shp: cursor
+		scroll-t:
+			Start: 2
+		scroll-tr:
+			Start: 3
+		scroll-r:
+			Start: 4
+		scroll-br:
+			Start: 5
+		scroll-b:
+			Start: 6
+		scroll-bl:
+			Start: 7
+		scroll-l:
+			Start: 8
+		scroll-tl:
+			Start: 9 
+		scroll-t-blocked:
+			Start: 128
+		scroll-tr-blocked:
+			Start: 129
+		scroll-r-blocked:
+			Start: 130
+		scroll-br-blocked:
+			Start: 131
+		scroll-b-blocked:
+			Start: 132
+		scroll-bl-blocked:
+			Start: 133
+		scroll-l-blocked:
+			Start: 134
+		scroll-tl-blocked:
+			Start: 135
+		select:
+			Start: 15
+			Length: 10
+		default:
+			Start: 0
+			X: -16
+			Y: -12
+		default-minimap:
+			Start: 84
+			X: -16
+			Y: -12
+		generic-blocked:
+			Start: 9
+		generic-blocked-minimap:
+			Start: 33
+		move:
+			Start: 10
+			Length: 4
+		move-minimap:
+			Start: 33
+			Length: 4
+		move-rough:
+			Start: 10
+			Length: 4
+		move-blocked:
+			Start: 14
+		move-blocked-minimap:
+			Start: 37
+		attack:
+			Start: 25
+			Length: 8
+		attack-minimap:
+			Start: 144
+			Length: 8
+		attackoutsiderange:
+			Start: 136
+			Length: 5
+		attackoutsiderange-minimap:
+			Start: 144
+			Length: 8
+		harvest:
+			Start: 109
+			Length: 8
+		harvest-minimap:
+			Start: 33
+			Length: 4
+		enter:
+			Start: 117
+			Length: 3
+		enter-minimap:
+			Start: 152
+			Length: 3
+		enter-blocked:
+			Start: 222
+			Length: 1
+		enter-blocked-minimap:
+			Start: 141
+		c4:
+			Start: 120
+			Length: 3
+		c4-minimap:
+			Start: 142
+			Length: 3
+		guard:
+			Start: 157
+			Length: 1
+		guard-minimap:
+			Start: 156
+			Length: 1
+		capture:
+			Start: 174
+			Length: 3
+		capture-minimap:
+			Start: 177
+			Length: 3
+		heal:
+			Start: 160
+			Length: 4
+		heal-minimap:
+			Start: 194
+			Length: 1
+		ability:
+			Start: 86
+			Length: 8
+		ability-minimap:
+			Start: 224
+			Length: 8
+		joystick-all:
+			Start: 0
+			X: -16
+			Y: -12
+		joystick-t-blocked:
+			Start: 124
+		joystick-tr-blocked:
+			Start: 125
+		joystick-r-blocked:
+			Start: 126
+		joystick-br-blocked:
+			Start: 127
+		joystick-b-blocked:
+			Start: 128
+		joystick-bl-blocked:
+			Start: 129
+		joystick-l-blocked:
+			Start: 130
+		joystick-tl-blocked:
+			Start: 131
+		deploy:
+			Start: 63
+			Length: 9
+		deploy-blocked:
+			Start: 221
+			Length: 1
+		goldwrench:
+			Start: 170
+			Length: 24
+		goldwrench-blocked:
+			Start: 213
+			Length: 1
+		nuke:
+			Start: 90
+			Length: 7
+		chrono-select:
+			Start: 97
+			Length: 8
+		chrono-target:
+			Start: 105
+			Length: 8
+		sell:
+			Start: 72
+			Length: 12
+		sell-blocked:
+			Start: 123
+			Length: 1
+		repair:
+			Start: 39
+			Length: 24
+		repair-blocked:
+			Start: 124
+			Length: 1
+		sell2:
+			Start: 72
+			Length: 12
+	nopower.shp: cursor
+		powerdown-blocked:
+			Start: 0
+			Length: 1
+		powerdown:
+			Start: 1
+			Length: 3
+	attackmove.shp: cursor
+		attackmove:
+			Start: 0
+			Length: 4
+		attackmove-minimap:
+			Start: 4
+			Length: 4
+		attackmove-blocked:
+			Start: 16
+		attackmove-blocked-minimap:
+			Start: 18

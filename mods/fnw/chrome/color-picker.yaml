@@ -1,0 +1,76 @@
+Background@COLOR_CHOOSERPRIMARY:
+	Logic: ColorPickerPrimaryLogic
+	Background: dialog2
+	Width: 270
+	Height: 200
+	Children:
+		Background@HUEBG:
+			Background: dialog3
+			X: 5
+			Y: 5
+			Width: 105
+			Height: 13
+			Children:
+				HueSlider@HUE:
+					X: 2
+					Y: 2
+					Width: 144
+					Height: 9
+					Ticks: 5
+		Background@MIXERBG:
+			Background: dialog3
+			X: 5
+			Y: 23
+			Width: 105
+			Height: 76
+			Children:
+				ColorMixer@MIXER:
+					X: 2
+					Y: 2
+					Width: 144
+					Height: 72
+# Color 2
+Background@COLOR_CHOOSERSECONDARY:
+	Logic: ColorPickerSecondaryLogic
+	Background: dialog2
+	Width: 270
+	Height: 200
+	Children:
+		Background@HUEBG:
+			Background: dialog3
+			X: 5
+			Y: 5
+			Width: 105
+			Height: 13
+			Children:
+				HueSlider@HUE:
+					X: 2
+					Y: 2
+					Width: 144
+					Height: 9
+					Ticks: 5
+		Background@MIXERBG:
+			Background: dialog3
+			X: 5
+			Y: 23
+			Width: 105
+			Height: 76
+			Children:
+				ColorMixer@MIXER:
+					X: 2
+					Y: 2
+					Width: 144
+					Height: 72
+
+		ActorPreview@PREVIEW:
+			X: 153
+			Y: 20
+			Width: 80
+			Height: 73
+		Button@RANDOM_BUTTON:
+			Key: tab
+			X: 170
+			Y: 120
+			Width: 70
+			Height: 25
+			Text: Random

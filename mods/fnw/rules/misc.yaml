@@ -1,0 +1,358 @@
+^UnkownPlace:
+	AlwaysVisible:
+	Valued:
+		Cost: 0
+	Tooltip:
+		Name:
+	RenderSprites:
+		Image: null
+        
+^LockedPlace:
+	AlwaysVisible:
+	Valued:
+		Cost: 0
+	Tooltip:
+		Name:
+	RenderSprites:
+		Image: lockedicon
+
+mpspawn:
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 1
+	EditorTilesetFilter:
+		Categories: Actor
+
+waypoint:
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 1
+	EditorTilesetFilter:
+		Categories: Actor
+        
+        
+soundambiance:
+	AlwaysVisible:
+    Interactable:
+	Immobile:
+		OccupiesSpace: false
+	WithSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 1
+	EditorTilesetFilter:
+		Categories: Actor
+        
+#Sound_ Type
+
+wind01:
+	Inherits@1: soundambiance
+	Tooltip:
+		Name: Wind Sound 01
+    RenderSpritesEditorOnly:
+        Image: soundambiance
+	AmbientSound:
+		SoundFiles: wind_fan01.aud
+		Interval: 280, 340
+        Delay: 120
+        
+wind02:
+	Inherits@1: soundambiance
+	Tooltip:
+		Name: Wind Sound 02
+    RenderSpritesEditorOnly:
+        Image: soundambiance
+	AmbientSound:
+		SoundFiles: wind_fan02.aud
+		Interval: 280, 340
+        Delay: 120
+        
+wind03:
+	Inherits@1: soundambiance
+	Tooltip:
+		Name: Wind Sound 03
+    RenderSpritesEditorOnly:
+        Image: soundambiance
+	AmbientSound:
+		SoundFiles: wind_fan03.aud
+		Interval: 280, 340
+        Delay: 120
+        
+        
+DiastMine:
+	Inherits@1: ^SpriteActor
+	HiddenUnderShroud:
+    Interactable:
+	Tooltip:
+		Name: Diast Ore
+	WithSpriteBody:
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Diast
+	SeedsResource:
+		ResourceType: Diast
+		Interval: 50
+	EditorTilesetFilter:
+		Categories: Resource spawn
+    RenderSprites:
+		Image: diastore
+        Palette: diastgreen
+
+^aracnst.colorpicker:
+	Inherits: aracnst
+	RenderSprites:
+		Image: aracnst
+		Palette: colorpicker
+
+Mine_Scar:
+	Inherits: ^Mine
+	RenderSprites:
+		Image: mine_weapon
+	Explodes:
+		Weapon: UnitExplodeSmall
+        
+
+infantry.huskgore:
+	Inherits@1: ^SpriteActor
+	Health:
+		HP: 75
+	Armor:
+		Type: light
+	HiddenUnderFog:
+		Type: CenterPosition
+	Tooltip:
+		Name: Wreck
+	AutoTargetPriority:
+	ScriptTriggers:
+	WithFacingSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 0
+	RenderSprites:
+		Image: InfantryGibs
+	HitShape:
+
+CAMERA:
+	EditorOnlyTooltip:
+		Name: (reveals area to owner)
+	AlwaysVisible:
+    Interactable:
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	BodyOrientation:
+		QuantizedFacings: 1
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+        
+camera.scout.death:
+	Inherits: CAMERA
+    KillsSelf:
+        Delay: 50
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+        
+
+camera.spy:
+	Inherits: CAMERA
+	EditorOnlyTooltip:
+		Name: (support power proxy camera)
+	DetectCloaked:
+		Range: 10c0
+		CloakTypes: Cloak, Hijacker, Buried
+	WithDecoration:
+		Image: revealradr
+		Sequence: idle
+		Palette: effectalpha75
+		ReferencePoint: bottom, left
+		ZOffset: 0
+
+camera.cloak:
+	Inherits: CAMERA
+	EditorOnlyTooltip:
+		Name: (support power proxy camera)
+	ProximityExternalCondition:
+		Condition: cloakgenerator
+		Range: 12c0
+		EnableSound: cloak5.aud
+		DisableSound: cloak5.aud
+		AffectsParent: true
+
+upgrade.AchilleDoom:
+	Inherits@1: ^ExistsInWorld
+	AlwaysVisible:
+	ScriptTriggers:
+	Tooltip:
+		Name: Obusier
+		Description: Change l'arme en un obusier devastateur.
+	Buildable:
+		BuildPaletteOrder: 50
+		Queue: Achille.baneslayer
+		Prerequisites: ~!DoomWeapons
+	KillsSelf:
+		RemoveInstead: false
+	Aircraft:
+	Health:
+		HP: 0
+	Valued:
+		Cost: 100
+	Explodes:
+		Weapon: Warhead_Upgrade_BIKE
+	RenderSprites:
+		Image: speedboosticon
+	HitShape:
+
+research.SpeedT1:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	AlwaysVisible:
+	WithSpriteBody:
+	UpdatesPlayerStatistics:
+	SelectionDecorations:
+	Selectable:
+	Tooltip:
+		Name: Articulations magnétiques
+		Description: Réduit la friction des pièces d’armure de l’infanterie, \n ce qui augmente leur vitesse de 20%.
+	Buildable:
+		BuildPaletteOrder: 50
+		Queue: none.RedAlliance
+		Prerequisites: !research.SpeedT1
+		Buildlimit: 1
+	Valued:
+		Cost: 100
+	Health:
+		HP: 1
+	DamageMultiplier@UPGRADE:
+		Modifier: 0
+	ProvidesPrerequisite@buildingname:
+	Immobile:
+		OccupiesSpace: false
+	RenderSprites:
+		Image: speedboosticon
+	HitShape:
+
+upgrade.boostSpeed2:
+	Inherits@1: ^ExistsInWorld
+	AlwaysVisible:
+	Tooltip:
+		Name: Option Test
+		Description: echange l'arme de la moto par une version jumeler.
+	Buildable:
+		BuildPaletteOrder: 50
+		Queue: Bike.RedAlliance
+	KillsSelf:
+		RemoveInstead: false
+	Aircraft:
+	Health:
+		HP: 1
+	Valued:
+		Cost: 100
+	Explodes:
+		Weapon: Warhead_Upgrade_BIKE
+	RenderSprites:
+		Image: speedboosticon
+	HitShape:
+
+upgrade.Inferno.flame:
+	Inherits@1: ^ExistsInWorld
+	AlwaysVisible:
+	ScriptTriggers:
+	Tooltip:
+		Name: Generateur à combustion
+		Description: ...
+	Buildable:
+		BuildPaletteOrder: 50
+		Queue: Inferno.RedAlliance
+	KillsSelf:
+		RemoveInstead: false
+	Aircraft:
+	Health:
+		HP: 0
+	Valued:
+		Cost: 0
+	Explodes:
+		Weapon: Warhead_POWER_INFERNO_FLAME
+	RenderSprites:
+		Image: flameinfernopower
+	HitShape:
+
+upgrade.Inferno.Gatling:
+	Inherits@1: ^ExistsInWorld
+	AlwaysVisible:
+	ScriptTriggers:
+	Tooltip:
+		Name: Canon Gatling Inferno
+		Description: ...
+	Buildable@Local:
+		BuildPaletteOrder: 40
+		Queue: Inferno.RedAlliance
+		Prerequisites: !gatlinggo
+	KillsSelf:
+		RemoveInstead: false
+	Aircraft:
+	Health:
+		HP: 0
+	Valued:
+		Cost: 600
+	Explodes:
+		Weapon: Warhead_POWER_INFERNO_GATLING
+	RenderSprites:
+		Image: gatlinginfernopower
+	HitShape:
+
+matlay01:
+	Inherits: ^terrain_mat
+	RenderSprites:
+        Image: lay_clear01
+    
+matlay02:
+	Inherits: ^terrain_mat
+	RenderSprites:
+        Image: lay_clear02   
+    
+GrantCondition.bikeop:
+	AlwaysVisible:
+	Tooltip:
+		Name: Bike op
+		Description: Réduit la friction des pièces d’armure de l’infanterie, \n ce qui augmente leur vitesse de 20%.
+	Buildable:
+		BuildPaletteOrder: 50
+		Queue: old.RedAlliance
+	Valued:
+		Cost: 1000
+	RenderSprites:
+		Image: speedboosticon
+	ProvidesPrerequisite:
+		Prerequisite: bikeop
+
+upgrade.InfernusAR:
+	AlwaysVisible:
+	ConditionManager:
+	Tooltip:
+		Name: Mélange infernal
+		Description: ...
+	Buildable:
+		BuildPaletteOrder: 50
+		Queue: Researh.RedAlliance
+		Prerequisites: !InfernusAR
+	ExternalCondition@InfernusAR:
+		Condition: InfernusAR
+	Valued:
+		Cost: 1000
+	RenderSprites:
+		Image: tech2icon
+	ProvidesPrerequisite:
+		Prerequisite: InfernusAR

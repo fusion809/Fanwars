@@ -1,0 +1,129 @@
+t2_chimera:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+        Facings: 64
+	icon: chimeraicon
+    muzzle: muzzle_autogun_small
+        Length: *
+        BlendMode: Additive
+        
+baneslayerattackaircraft:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+        Facings: 64
+    muzzle: muzzle_autogun_small
+        Length: *
+        BlendMode: Additive
+    
+    
+t4_cruiser:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+        Facings: 64
+	icon: cruisericon
+	engine: baselightcub
+		Length: 4
+		BlendMode: Additive
+		ZOffset: -100
+	spot: light_projup
+		Length: *
+		Tick: 100
+		BlendMode: Additive
+		ZOffset: -300
+
+t2_command_relais:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+	engine: baselightcub
+		Length: 4
+		BlendMode: Additive
+		ZOffset: -100
+	spot: light_projup
+		Length: *
+		Tick: 100
+		BlendMode: Additive
+		ZOffset: -300
+	icon: Commandt3icon
+
+t2_wyvern:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+        Facings: 64
+	icon: wyvernicon
+
+t3_archdemon:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+        Facings: 64
+	icon: archdemonicon
+
+t0_transportship:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+	engine: baselightcub
+		Length: 4
+		BlendMode: Additive
+		ZOffset: -100
+	icon: cruisericon
+    
+# Order Aircraft
+
+t2_nidhogg:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+        Facings: 64
+	icon: nidhoggicon
+    muzzle: muzzle_autogun_small
+        Length: *
+        BlendMode: Additive
+    
+t3_thor:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+        Facings: 64
+    muzzle: muzzle_thor
+        Length: *
+        BlendMode: Additive
+	icon: thoricon
+    
+t3_valkyrie:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+        Facings: 64
+	icon: valkyrieicon
+    muzzle: muzzle_autogun_small
+        Length: *
+        BlendMode: Additive
+    
+# Conclave Aircraft
+    
+comete:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+        Facings: 64
+        Length: 5
+	icon: cometeicon
+    muzzle: muzzle_autogun_small
+        Length: *
+        BlendMode: Additive
+    
+zenith:
+    Inherits@Stat: ^StatAircraftEffect
+    idle:
+    aura_phie: aura_circle_phie
+		Length: *
+		BlendMode: Additive
+    aura_omega: aura_circle_omega
+		Length: *
+		BlendMode: Additive
+    icon: zenithicon
+
+quasar:
+    Inherits@Stat: ^StatAircraftEffect
+	idle:
+        Facings: 64
+	icon: quasaricon
+    muzzle: muzzle_autogun_small
+        Length: *
+        BlendMode: Additive
+    
